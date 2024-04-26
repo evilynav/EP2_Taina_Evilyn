@@ -39,21 +39,4 @@ def aloca_navios (mapa, blocos):
         else:
             for i in range(linha, size_navio+ linha):
                 mapa[i][coluna] = 'N'
-
-        # for linha in mapa:
-        #     print(linha)
-        # print()
-
     return mapa
-
-# mapa = [
-#     [' ', ' ', ' ', ' ', ' '],
-#     [' ', ' ', ' ', ' ', ' '],
-#     [' ', ' ', ' ', ' ', ' '],
-#     [' ', ' ', ' ', ' ', ' '],
-#     [' ', ' ', ' ', ' ', ' ']
-# ]
-
-# b = [2, 3, 4]
-
-# print(aloca_navios(mapa, b))
