@@ -99,3 +99,5 @@ def escolher_frota(numero_frota):
         mensagem_alocar = "Agora é a sua vez de alocar os seus navios!" 
         print (mensagem, espaco, mensagem_alocar) 
     
+
+    #Tentativa de realizar commit

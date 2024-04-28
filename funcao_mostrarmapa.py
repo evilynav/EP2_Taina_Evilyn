@@ -6,3 +6,6 @@ def mostrar_mapa(mapa_cpu,mapa_player,n):
         linha+= " "+ALFABETO+" " 
         esp= " "*2+linha+" "*2 
         print(esp) 
+
+
+        #início de função 
