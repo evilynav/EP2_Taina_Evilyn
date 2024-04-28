@@ -31,7 +31,6 @@ def aloca_navios (mapa, blocos):
             linha = random.randint(0, n-1)
             coluna = random.randint(0, n-1)
             orientacao = random.choice(['h', 'v'])
-        print(linha,coluna,orientacao   )
 
         if orientacao == 'h':
             for j in range(coluna, size_navio + coluna):
