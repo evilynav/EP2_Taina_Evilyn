@@ -1,6 +1,7 @@
 import time 
-from base_geral import * 
-from funcao_escfrota import * 
+from base_geral import *
+import random
+from funcoes import *
 
 print("=================================") 
 print("Bem-vindo ao INSPER-Batalha Naval!!") 
