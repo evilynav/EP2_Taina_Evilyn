@@ -11,6 +11,8 @@ time.sleep(0.5)
 
 print("Iniciando o jogo!") 
 
+#Trazer a função da Evilyn 
+
 time.sleep(0.5)
 
 paism, embarcacoesm = random.choice(list(PAISES.items())) #pais sorteado e lista das embarcações disponíveis para tal país
@@ -36,9 +38,9 @@ for pais in PAISES:
 
 
 numero_frota = int(input("Qual o número da nação da sua frota?  ")) 
-print(escolher_frota(numero_frota))
+print(escolher_frota(numero_frota)) 
 
-print (mapa_comp)
+print(mapa_comp)
 
 
 
