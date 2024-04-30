@@ -38,7 +38,9 @@ for pais in PAISES:
 
 
 numero_frota = int(input("Qual o número da nação da sua frota?  ")) 
-print(escolher_frota(numero_frota))
+print(escolher_frota(numero_frota)) 
+
+print(mapa_comp)
 
 
 
