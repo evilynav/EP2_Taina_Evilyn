@@ -1,6 +1,6 @@
 import time 
 from base_geral import * 
-from funcao_escfrota import * 
+from funcoes import *
 
 print("=================================") 
 print("Bem-vindo ao INSPER-Batalha Naval!!") 
@@ -9,6 +9,9 @@ print("=================================")
 time.sleep(0.5)
 
 print("Iniciando o jogo!") 
+
+mapa_cpu= (cria_mapa(10)) 
+mapa_player= (cria_mapa(10)) 
 
 #Trazer a função da Evilyn 
 
@@ -21,7 +24,7 @@ print(PAISES)
 print("Agora é a sua vez de alocar seus navios de guerra")  
 
 numero_frota = int(input("Qual o número da nação da sua frota?  ")) 
-print(escolher_frota(numero_frota))
+print(escolher_frota(numero_frota)) 
 
 
 
