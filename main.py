@@ -30,7 +30,6 @@ print("\n")
 print("Computador já está em posição de batalha!") 
 print("\n")
 
-
 i=0
 for pais in PAISES:
     i += 1
@@ -40,12 +39,10 @@ for pais in PAISES:
         print("    ", embarcacoes, numero)
 
 
-
-print("Agora é a sua vez de alocar seus navios de guerra.") 
-
 numero_frota = int(input("Qual o número da nação da sua frota?  ")) 
 print(escolher_frota(numero_frota))
 
+#printar os mapas vazios
 
 
 
