@@ -6,7 +6,7 @@ def cria_mapa(dimensao):
 
     i=0 
     while i < dimensao: 
-        listinha.append(' ') 
+        listinha.append(' ')
         i+=1 
 
     j=0
@@ -40,6 +40,27 @@ def posicao_suporta(mapa,blocos,linha,coluna,orientacao):
 
 #Terceira função: 
 
+def aloca_navios (mapa, blocos):
+    n = len(mapa)
+    #escolha das variáveis pela máquina:
+    
+    for size_navio in blocos:
+        linha = random.randint(0, n-1)
+        coluna = random.randint(0, n-1)
+        orientacao = random.choice(['h', 'v'])
+
+        while not posicao_suporta(mapa, size_navio, linha, coluna, orientacao):
+            linha = random.randint(0, n-1)
+            coluna = random.randint(0, n-1)
+            orientacao = random.choice(['h', 'v'])
+
+        if orientacao == 'h':
+            for j in range(coluna, size_navio + coluna):
+                mapa[linha][j] = 'N'
+        else:
+            for i in range(linha, size_navio+ linha):
+                mapa[i][coluna] = 'N'
+    return mapa
 
 
 
@@ -123,7 +144,7 @@ def escolher_frota(numero_frota):
         print (mensagem, espaco, mensagem_alocar) 
     
 
-    #Tentativa de realizar commit
+#Função lista_blocos 
 
 def lista_blocos  (embarcacoes,dic_conf):
     quant_emb = list(embarcacoes.values()) #quantas embarcações temos de cada tipo disponível para o país
@@ -153,3 +174,4 @@ def lista_blocos  (embarcacoes,dic_conf):
 
         
     return lista_pp
+
