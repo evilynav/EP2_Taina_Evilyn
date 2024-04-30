@@ -2,10 +2,7 @@ import time
 from base_geral import * 
 from funcao_escfrota import * 
 import random
-from primeira_funcao import cria_mapa
-from terceira_funcao import posicao_suporta
-from terceira_funcao import aloca_navios
-from define_blocos import lista_blocos
+from funcoes import *
 
 print("=================================") 
 print("Bem-vindo ao INSPER-Batalha Naval!!") 
