@@ -35,7 +35,7 @@ def mostrar_mapa_comp(mapa_comp,ALFABETO):
             print(mapa_comp[i][j], " ", end="") 
         print(str(i+1)) 
 
-    #Printar letras (parte de cima) 
+    #Printar letras (parte debaixo) 
 
     print("   ",end="") #Espaçamento inicial 
     for letra in ALFABETO: 
@@ -43,6 +43,7 @@ def mostrar_mapa_comp(mapa_comp,ALFABETO):
         if letra == "J": 
             break 
     print('\n',end="") 
+    return "" 
 
 
 print(mostrar_mapa_comp(mapa_comp,ALFABETO)) #Nós não vamos printar na tela a posição dos navios do computador, será return. 
