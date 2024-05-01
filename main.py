@@ -1,7 +1,8 @@
 import time 
 from base_geral import *
 import random
-from funcoes import *
+from funcoes import *  
+from funcao_mostrarmapa import * #Temporário, enquanto não ponho ele em funcoes 
 
 print(" ====================================\n"
     '|                                     |\n'
