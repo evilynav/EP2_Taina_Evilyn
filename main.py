@@ -25,7 +25,7 @@ mapa = cria_mapa(10) #precisa mudar a funcao que a variável mapa recebe
 
 mapa_comp = aloca_navios(mapa, blocos_lista) #mapa da máquina 
 
-mapa_jogador= cria_mapa(10)  
+mapa_jogador= cria_mapa(10)  #Pode ser mudado para mapa(10)
 
 print("O computador está alocando os navios de guerra do país {0}...". format(paism)) 
 print("\n")
