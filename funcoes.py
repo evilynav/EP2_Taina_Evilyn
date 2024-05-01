@@ -1,20 +1,17 @@
 #Primeira função: cria_mapa 
+from base_geral import *
+import random
 
-def cria_mapa(dimensao): 
-    lista_final= [] 
-    listinha= [] 
+def cria_mapa(N):
+    matriz_quadrada = []
 
-    i=0 
-    while i < dimensao: 
-        listinha.append(' ')
-        i+=1 
+    for elemento in range(N):
+        linha = []
+        for elemento in range(N):
+            linha.append(' ')
+        matriz_quadrada.append(linha)
+    return matriz_quadrada
 
-    j=0
-    while j < dimensao: 
-        lista_final.append(listinha)
-        j+=1 
-
-    return lista_final 
 
 #segunda função: posicao_suporta
 
@@ -40,26 +37,24 @@ def posicao_suporta(mapa,blocos,linha,coluna,orientacao):
 
 #Terceira função: 
 
-def aloca_navios (mapa, blocos):
+def aloca_navios(mapa, blocos):
     n = len(mapa)
-    #escolha das variáveis pela máquina:
-    
-    for size_navio in blocos:
-        linha = random.randint(0, n-1)
-        coluna = random.randint(0, n-1)
-        orientacao = random.choice(['h', 'v'])
-
-        while not posicao_suporta(mapa, size_navio, linha, coluna, orientacao):
-            linha = random.randint(0, n-1)
-            coluna = random.randint(0, n-1)
+    for blocos_navio in blocos:
+        while True:
+            linha = random.randint(0, n - 1)
+            coluna = random.randint(0, n - 1)
             orientacao = random.choice(['h', 'v'])
 
-            if orientacao == 'h':
-                for j in range(coluna, coluna + size_navio):
-                    mapa[linha][j] = 'N'
-            else:
-                for i in range(linha, linha + size_navio):
-                    mapa[i][coluna] = 'N'
+            if posicao_suporta(mapa, blocos_navio, linha, coluna, orientacao):
+
+                if orientacao == 'h':
+                    for i in range(blocos_navio):
+                        mapa[linha][coluna + i] = 'N'
+                else:
+                    for i in range(blocos_navio):
+                        mapa[linha + i][coluna] = 'N'
+                break
+    
     return mapa
 
 
@@ -174,4 +169,24 @@ def lista_blocos  (embarcacoes,dic_conf):
 
         
     return lista_pp
+
+def aloca_navios(mapa, blocos):
+    n = len(mapa)
+    for blocos_navio in blocos:
+        while True:
+            linha = random.randint(0, n - 1)
+            coluna = random.randint(0, n - 1)
+            orientacao = random.choice(['h', 'v'])
+
+            if posicao_suporta(mapa, blocos_navio, linha, coluna, orientacao):
+
+                if orientacao == 'h':
+                    for i in range(blocos_navio):
+                        mapa[linha][coluna + i] = 'N'
+                else:
+                    for i in range(blocos_navio):
+                        mapa[linha + i][coluna] = 'N'
+                break
+    
+    return mapa
 
