@@ -70,6 +70,7 @@ mapa_p = cria_mapa(10)
 
 from base_geral import *
 
+
 def mostrar_mapa(mapa_cpu,mapa_player,n): 
     print("COMPUTADOR- {0}") 
     
@@ -77,3 +78,4 @@ def mostrar_mapa(mapa_cpu,mapa_player,n):
     for i in range (n): 
         linha+= " "+ALFABETO+" " 
         esp= " "*2+linha+" "*2
+

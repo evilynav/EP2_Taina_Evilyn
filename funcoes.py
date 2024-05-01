@@ -54,12 +54,12 @@ def aloca_navios (mapa, blocos):
             coluna = random.randint(0, n-1)
             orientacao = random.choice(['h', 'v'])
 
-        if orientacao == 'h':
-            for j in range(coluna, size_navio + coluna):
-                mapa[linha][j] = 'N'
-        else:
-            for i in range(linha, size_navio+ linha):
-                mapa[i][coluna] = 'N'
+            if orientacao == 'h':
+                for j in range(coluna, coluna + size_navio):
+                    mapa[linha][j] = 'N'
+            else:
+                for i in range(linha, linha + size_navio):
+                    mapa[i][coluna] = 'N'
     return mapa
 
 
