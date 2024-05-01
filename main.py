@@ -3,9 +3,11 @@ from base_geral import *
 import random
 from funcoes import *
 
-print("=================================") 
-print("Bem-vindo ao INSPER-Batalha Naval!!") 
-print("=================================") 
+print(" ====================================\n"
+    '|                                     |\n'
+    '| Bem-vindo ao INSPER - Batalha Naval |\n'
+    '|                                     |\n'
+    ' =======   xxxxxxxxxxxxxxxxx   ======= \n')
 
 time.sleep(0.5)
 
@@ -21,7 +23,9 @@ blocos_lista = lista_blocos(embarcacoesm,CONFIGURACAO) #funcao que devolve a lis
 
 mapa = cria_mapa(10) #precisa mudar a funcao que a variável mapa recebe
 
-mapa_comp = aloca_navios(mapa, blocos_lista) #mapa da máquina
+mapa_comp = aloca_navios(mapa, blocos_lista) #mapa da máquina 
+
+mapa_jogador= cria_mapa(10)  
 
 print("O computador está alocando os navios de guerra do país {0}...". format(paism)) 
 print("\n")
