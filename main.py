@@ -40,6 +40,8 @@ for pais in PAISES:
     for embarcacoes, numero in PAISES[pais].items():
         print("    ", embarcacoes, numero) 
 
+print(mostrar_mapa_comp(mapa_comp,ALFABETO))
+
 numero_frota = int(input("Qual o número da nação da sua frota?  "))
 
 lista_paises = list(PAISES.keys())
@@ -49,6 +51,7 @@ paisjogador = lista_paises[numero_frota-1]
 embarcarcoesjogador = PAISES[paisjogador]
 
 blocos_lista_jogador = lista_blocos(embarcarcoesjogador,CONFIGURACAO)
+
 
 print(blocos_lista_jogador)
 
