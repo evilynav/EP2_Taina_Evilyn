@@ -42,7 +42,6 @@ for pais in PAISES:
 
 print(mostrar_mapa_comp(mapa_comp,ALFABETO))
 
-
 numero_frota = int(input("Qual o número da nação da sua frota?  "))
 
 lista_paises = list(PAISES.keys())

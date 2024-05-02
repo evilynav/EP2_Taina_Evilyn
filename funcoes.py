@@ -85,27 +85,28 @@ def foi_derrotado (matriz_quadrada):
         return False 
     
 import random
-# def aloca_navios (mapa, blocos):
-#     n = len(mapa)
-#     #escolha das variáveis pela máquina:
+
+def aloca_navios (mapa, blocos):
+    n = len(mapa)
+    #escolha das variáveis pela máquina:
     
-#     for size_navio in blocos:
-#         linha = random.randint(0, n-1)
-#         coluna = random.randint(0, n-1)
-#         orientacao = random.choice(['h', 'v'])
+    for size_navio in blocos:
+        i = random.randint(0, n-1)
+        j = random.randint(0, n-1)
+        direcao = random.choice(['h', 'v'])
 
-#         while not posicao_suporta(mapa, size_navio, linha, coluna, orientacao):
-#             linha = random.randint(0, n-1)
-#             coluna = random.randint(0, n-1)
-#             orientacao = random.choice(['h', 'v'])
+        while not posicao_suporta(mapa, size_navio, i, j, direcao):
+            i = random.randint(0, n-1)
+            j = random.randint(0, n-1)
+            direcao = random.choice(['h', 'v'])
 
-#         if orientacao == 'h':
-#             for j in range(coluna, size_navio + coluna):
-#                 mapa[linha][j] = 'N'
-#         else:
-#             for i in range(linha, size_navio+ linha):
-#                 mapa[i][coluna] = 'N'
-#     return mapa
+        if direcao == 'h':
+            for w in range(j, size_navio + j):
+                mapa[i][w] = 'N'
+        else:
+            for z in range(i, size_navio+ i):
+                mapa[z][j] = 'N'
+    return mapa
 
 
 #função escolher frota: escolher_frota 
@@ -198,9 +199,9 @@ mapa_jogador= cria_mapa(10)  #Pode ser mudado para mapa(10)
 def aloca_navios_jogador(mapa, blocos):
     for blocos_navio in blocos:
         while True:
-            j = int(input('qual a coluna a ser posiciona? '))
-            i = int(input('qual a linha a ser posiciona? '))
-            direcao = input('qual a orientação a ser posicionada? [h/v] ') 
+            j = int(input('Para alocar, informe uma coluna: '))
+            i = int(input('Agora, escolha uma linha: '))
+            direcao = input('Para qual sentido a embarcação será posicionada? [h/v] ') 
 
             if posicao_suporta(mapa, blocos_navio, i, j, direcao):
 
