@@ -2,6 +2,8 @@
 from base_geral import *
 import random
 
+
+
 def cria_mapa(N):
     matriz_quadrada = []
 
@@ -141,6 +143,19 @@ def escolher_frota(numero_frota):
 
 #Função lista_blocos 
 
+
+
+paism, embarcacoesm = random.choice(list(PAISES.items())) #pais sorteado e lista das embarcações disponíveis para tal país
+
+i=0
+for pais in PAISES:
+    i += 1
+    print("\n")
+    print(i, pais)
+    for embarcacoes, numero in PAISES[pais].items():
+        print("    ", embarcacoes, numero)
+
+
 def lista_blocos  (embarcacoes,dic_conf):
     quant_emb = list(embarcacoes.values()) #quantas embarcações temos de cada tipo disponível para o país
     nome_embarcacao = list(embarcacoes.keys()) # nomes das embarcações usados para encontrar quantos blocos cada uma ocupa
@@ -166,9 +181,18 @@ def lista_blocos  (embarcacoes,dic_conf):
                 lista_pp.append(lista_b[j][1])
             j += 1
         i += 1 
-
         
     return lista_pp
+
+
+blocos_lista = lista_blocos(embarcacoesm,CONFIGURACAO) #funcao que devolve a lista de blocos disponível por barco disponível
+
+mapa = cria_mapa(10) #precisa mudar a funcao que a variável mapa recebe
+
+mapa_comp = aloca_navios(mapa, blocos_lista) #mapa da máquina 
+
+mapa_jogador= cria_mapa(10)  #Pode ser mudado para mapa(10)
+
 
 def aloca_navios(mapa, blocos):
     n = len(mapa)
@@ -190,3 +214,23 @@ def aloca_navios(mapa, blocos):
     
     return mapa
 
+#Alocar navios do jogador:
+
+def aloca_navios_jogador(mapa, blocos):
+    for blocos_navio in blocos:
+        while True:
+            coluna = int(input('qual a coluna a ser posiciona? '))
+            linha = int(input('qual a linha a ser posiciona? '))
+            orientacao = input('qual a orientação a ser posicionada? [h/v] ') 
+
+            if posicao_suporta(mapa, blocos_navio, linha, coluna, orientacao):
+
+                if orientacao == 'h':
+                    for i in range(blocos_navio):
+                        mapa[linha][coluna + i] = 'N'
+                else:
+                    for i in range(blocos_navio):
+                        mapa[linha + i][coluna] = 'N'
+                break
+    
+    return mapa 

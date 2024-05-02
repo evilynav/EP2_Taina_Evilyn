@@ -1,15 +1,15 @@
 from base_geral import *
 from funcoes import * 
 
-paism, embarcacoesm = random.choice(list(PAISES.items())) #pais sorteado e lista das embarcações disponíveis para tal país
+# paism, embarcacoesm = random.choice(list(PAISES.items())) #pais sorteado e lista das embarcações disponíveis para tal país
 
-blocos_lista = lista_blocos(embarcacoesm,CONFIGURACAO) #funcao que devolve a lista de blocos disponível por barco disponível
+#blocos_lista = lista_blocos(embarcacoesm,CONFIGURACAO) #funcao que devolve a lista de blocos disponível por barco disponível
 
-mapa = cria_mapa(10) #precisa mudar a funcao que a variável mapa recebe
+#mapa = cria_mapa(10) #precisa mudar a funcao que a variável mapa recebe
 
-mapa_comp = aloca_navios(mapa, blocos_lista) #mapa da máquina 
+#mapa_comp = aloca_navios(mapa, blocos_lista) #mapa da máquina 
 
-mapa_jogador= cria_mapa(10)  #Pode ser mudado para mapa(10)
+#mapa_jogador= cria_mapa(10)  #Pode ser mudado para mapa(10)
 
 
 #Função mostrar_mapa_comp (PARA O COMPUTADOR) e Função mostrar_mapa_jog (PARA O JOGADOR) 
@@ -46,7 +46,7 @@ def mostrar_mapa_comp(mapa_comp,ALFABETO):
     return "" 
 
 
-print(mostrar_mapa_comp(mapa_comp,ALFABETO)) #Nós não vamos printar na tela a posição dos navios do computador, será return. 
+# print(mostrar_mapa_comp(mapa_comp,ALFABETO)) #Nós não vamos printar na tela a posição dos navios do computador, será return. 
 
 ###### mostrar_mapa_jog ###### 
 
@@ -79,4 +79,4 @@ def mostrar_mapa_jog(mapa_jogador,ALFABETO):
             break 
     print('\n',end="") 
 
-print(mostrar_mapa_jog(mapa_jogador,ALFABETO)) 
+# print(mostrar_mapa_jog(mapa_jogador,ALFABETO)) 

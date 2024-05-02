@@ -1,20 +1,19 @@
 import time 
 from base_geral import *
 import random
-from funcoes import *  
 from funcao_mostrarmapa import * #Temporário, enquanto não ponho ele em funcoes 
+#from aloca_n_jog import *
 
-print(" ====================================\n"
-    '|                                     |\n'
-    '| Bem-vindo ao INSPER - Batalha Naval |\n'
-    '|                                     |\n'
-    ' =======   xxxxxxxxxxxxxxxxx   ======= \n')
+
+print("           ====================================")
+print("          |                                     |")
+print("          | Bem-vindo ao INSPER - Batalha Naval |")
+print("          |                                     |")
+print("          =======   xxxxxxxxxxxxxxxxx   ======= ")
 
 time.sleep(0.5)
 
 print("Iniciando o jogo!") 
-
-#Trazer a função da Evilyn 
 
 time.sleep(0.5)
 
@@ -39,13 +38,25 @@ for pais in PAISES:
     print("\n")
     print(i, pais)
     for embarcacoes, numero in PAISES[pais].items():
-        print("    ", embarcacoes, numero)
+        print("    ", embarcacoes, numero) 
 
+numero_frota = int(input("Qual o número da nação da sua frota?  "))
 
-numero_frota = int(input("Qual o número da nação da sua frota?  ")) 
-print(escolher_frota(numero_frota)) 
+lista_paises = list(PAISES.keys())
 
-print(mapa_comp)
+paisjogador = lista_paises[numero_frota-1]
+
+embarcarcoesjogador = PAISES[paisjogador]
+
+blocos_lista_jogador = lista_blocos(embarcarcoesjogador,CONFIGURACAO)
+
+print(blocos_lista_jogador)
+
+alocacao_jogador = aloca_navios_jogador(mapa_jogador, blocos_lista_jogador)
+
+print(mostrar_mapa_comp(mapa_comp,ALFABETO))
+
+print(mostrar_mapa_jog(mapa_jogador,ALFABETO))
 
 
 
