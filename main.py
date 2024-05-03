@@ -2,7 +2,7 @@ import time
 from base_geral import *
 import random
 from funcao_mostrarmapa import * #Temporário, enquanto não ponho ele em funcoes 
-#from aloca_n_jog import *
+N= u"\u001b[32m▓\u001b[0m"
 
 
 print("           ====================================")
@@ -49,8 +49,6 @@ paisjogador = lista_paises[numero_frota-1]
 embarcarcoesjogador = PAISES[paisjogador]
 
 blocos_lista_jogador = lista_blocos(embarcarcoesjogador,CONFIGURACAO)
-
-barcos_disponiveis = {}
 
 print (embarcarcoesjogador, blocos_lista)
 # precisamos fazer uma funcao para aparecer o nome bonitinho junto com os numeros de blocos por navio

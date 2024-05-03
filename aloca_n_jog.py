@@ -1,4 +1,5 @@
 from funcoes import * 
+N= u"\u001b[32m▓\u001b[0m"
 
 paism, embarcacoesm = random.choice(list(PAISES.items())) #pais sorteado e lista das embarcações disponíveis para tal país
 
@@ -23,10 +24,10 @@ def aloca_navios_jogador(mapa, blocos):
 
                 if orientacao == 'h':
                     for i in range(blocos_navio):
-                        mapa[linha][coluna + i] = 'N'
+                        mapa[linha][coluna + i] = N
                 else:
                     for i in range(blocos_navio):
-                        mapa[linha + i][coluna] = 'N'
+                        mapa[linha + i][coluna] = N
                 break
     
     return mapa 

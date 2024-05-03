@@ -3,6 +3,7 @@ from funcoes import *
 from base_geral import *
 import random
 
+N= u"\u001b[32m▓\u001b[0m"
 
 numero_frota = int(input("Qual o número da nação da sua frota?  "))
 
@@ -25,13 +26,13 @@ def pc_ataca(mapa_jogador):
     coluna_ataque_pc = random.choice(list(coluna_num)) 
     linha_ataque_pc = random.choice(list(linha_num)) 
 
-#Não estou sabendo chamar as informações do mapa do jogador
+    if mapa_jogador[coluna_ataque_pc][linha_ataque_pc] == N: 
+        mapa_jogador[coluna_ataque_pc][linha_ataque_pc] = u"\u001b[31m▓\u001b[0m"
 
-    if mapa_jogador[coluna_ataque_pc][linha_ataque_pc] == 'N': 
-        mapa_jogador[coluna_ataque_pc][linha_ataque_pc] = 'X' 
 
     else: 
-        mapa_jogador[coluna_ataque_pc][linha_ataque_pc] = 'A' 
+        mapa_jogador[coluna_ataque_pc][linha_ataque_pc] = u"\u001b[37m▓\u001b[0m"
+ 
     
     return mostrar_mapa_jog(mapa_jogador,ALFABETO)
 
@@ -39,19 +40,17 @@ print(pc_ataca(mapa_jogador))
 
 #Ataque do Jogador 
 
-
-
-#Por no main: 
 coluna_ataque_jog = int(input("Atacar na coluna:  ")) 
 linha_ataque_jog = int(input("Atacar na linha:  ")) 
 
 
-def jog_ataca(mapa_comp,coluna_ataque_jog, linha_ataque_jog):  
 
-    if mapa_comp[coluna_ataque_jog][linha_ataque_jog] == 'N': 
-        'N' == 'X' 
+def jog_ataca(mapa_comp,coluna_ataque_jog, linha_ataque_jog):
+
+    if mapa_comp[coluna_ataque_jog][linha_ataque_jog] == N: 
+        mapa_comp[coluna_ataque_jog][linha_ataque_jog] =  'X'
 
     else: 
-        "" == 'A' 
+        mapa_comp[coluna_ataque_jog][linha_ataque_jog] = 'A' 
 
 print(jog_ataca(mapa_comp,coluna_ataque_jog, linha_ataque_jog)) 

@@ -1,5 +1,6 @@
 from base_geral import *
 from funcoes import * 
+N= u"\u001b[32m▓\u001b[0m"
 
 #Mostra mapa atualizado 
 def mostrar_mapa_comp(mapa_comp,ALFABETO): 

@@ -1,7 +1,7 @@
 #Primeira função: cria_mapa 
 from base_geral import *
 import random
-
+N= u"\u001b[33m▓\u001b[0m"
 
 
 def cria_mapa(N):
@@ -25,7 +25,7 @@ def posicao_suporta(mapa,blocos,linha,coluna,orientacao):
                     for i in range(blocos): 
                         if (linha+i) >= len(mapa): 
                             return False
-                        elif mapa[linha+i][coluna] == 'N': 
+                        elif mapa[linha+i][coluna] == N: 
                             return False 
                             
             elif  orientacao == 'h': 
@@ -33,7 +33,7 @@ def posicao_suporta(mapa,blocos,linha,coluna,orientacao):
                     if (coluna+j) >= len(mapa):
                         return False 
                     
-                    elif mapa[linha][coluna+j] == 'N': 
+                    elif mapa[linha][coluna+j] == N: 
                          return False 
             return True 
 
@@ -51,10 +51,10 @@ def aloca_navios(mapa, blocos):
 
                 if direcao == 'h':
                     for z in range(blocos_navio):
-                        mapa[i][j + z] = 'N'
+                        mapa[i][j + z] = N
                 else:
                     for z in range(blocos_navio):
-                        mapa[i + z][j] = 'N'
+                        mapa[i + z][j] = N
                 break
     
     return mapa
@@ -73,7 +73,7 @@ def foi_derrotado (matriz_quadrada):
     while i < len(matriz_quadrada):
         j = 0
         while j < len(matriz_quadrada[i]):
-            if matriz_quadrada[i][j] == 'N':
+            if matriz_quadrada[i][j] == N:
                 navio +=1
             else:
                 navio = navio
@@ -102,10 +102,10 @@ def aloca_navios (mapa, blocos):
 
         if direcao == 'h':
             for w in range(j, size_navio + j):
-                mapa[i][w] = 'N'
+                mapa[i][w] = N
         else:
             for z in range(i, size_navio+ i):
-                mapa[z][j] = 'N'
+                mapa[z][j] = N
     return mapa
 
 
@@ -200,17 +200,17 @@ def aloca_navios_jogador(mapa, blocos):
             j = int(input('Para alocar, informe uma coluna: '))
             i = int(input('Agora, escolha uma linha: '))
             direcao = input('Para qual sentido a embarcação será posicionada? [h/v] ')
-            i += 1
-            j += 1
+            i -= 1
+            j -= 1
 
             if posicao_suporta(mapa, blocos_navio, i, j, direcao):
 
                 if direcao == 'h':
                     for z in range(blocos_navio):
-                        mapa[i][j + z] = 'N'
+                        mapa[i][j + z] = N
                 else:
                     for z in range(blocos_navio):
-                        mapa[i + z][j] = 'N'
+                        mapa[i + z][j] = N
                 break
     
     return mapa 
