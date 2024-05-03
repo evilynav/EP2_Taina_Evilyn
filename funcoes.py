@@ -5,14 +5,14 @@ N= u"\u001b[33m▓\u001b[0m"
 
 
 def cria_mapa(N):
-    matriz_quadrada = []
+    matriz = []
 
-    for elemento in range(N):
+    for i in range(N):
         linha = []
-        for elemento in range(N):
+        for i in range(N):
             linha.append(' ')
-        matriz_quadrada.append(linha)
-    return matriz_quadrada
+        matriz.append(linha)
+    return matriz 
 
 
 #segunda função: posicao_suporta
