@@ -2,7 +2,61 @@
 from base_geral import *
 import random
 N= u"\u001b[33m▓\u001b[0m"
+X= u"\u001b[31m▓\u001b[0m"
+A= u"\u001b[37m▓\u001b[0m"
+# from funcao_mostrarmapa import *
 
+def mostrar_mapa_comp(mapa_comp,ALFABETO): 
+    print("COMPUTADOR- {0}".format(paism)) #Legenda antes de mostrar o mapa do computador
+
+    #Printar letras (parte de cima) 
+
+    print("   ",end="") #Espaçamento inicial 
+    for letra in ALFABETO: 
+        print(letra+"  ",end="") #determino o espaçamento entre as letras
+
+    print('\n',end="") 
+
+    #Números laterais e linhas do mapa 
+
+    for i in range (len(mapa_comp)): 
+        print(str(i+1)," ",end="") 
+        for j in range(len(mapa_comp)): 
+            print(mapa_comp[i][j], " ", end="") 
+        print(str(i+1)) 
+
+    #Printar letras (parte debaixo) 
+
+    print("   ",end="") #Espaçamento inicial 
+    for letra in ALFABETO: 
+        print(letra+"  ",end="") #determino o espaçamento entre as letras
+
+    print('\n',end="") 
+    return "" 
+
+def mostrar_mapa_jog(mapa_jogador,ALFABETO): 
+
+    print("JOGADOR-") 
+    print("   ",end="")
+
+    for l in ALFABETO: 
+        print(l+"  ",end="")
+
+    print('\n',end="") 
+
+    for i in range (len(mapa_jogador)): 
+        print(str(i+1)," ",end="") 
+        for j in range(len(mapa_jogador)): 
+            print(mapa_jogador[i][j], " ", end="") 
+
+        print(str(i+1)) 
+
+    print("   ",end="")
+
+    for l in ALFABETO: 
+        print(l+"  ",end="")
+
+    print('\n',end="") 
 
 def cria_mapa(N):
     matriz = []
@@ -201,7 +255,7 @@ def aloca_navios_jogador(mapa, blocos):
             i = int(input('Agora, escolha uma linha: '))
             direcao = input('Para qual sentido a embarcação será posicionada? [h/v] ')
             i -= 1
-            j -= 1
+            j -= 1 
 
             if posicao_suporta(mapa, blocos_navio, i, j, direcao):
 
@@ -211,6 +265,7 @@ def aloca_navios_jogador(mapa, blocos):
                 else:
                     for z in range(blocos_navio):
                         mapa[i + z][j] = N
-                break
-    
+            
+            print(mostrar_mapa_jog(mapa,ALFABETO))
+
     return mapa 

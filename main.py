@@ -56,9 +56,63 @@ alocacao_jogador = aloca_navios_jogador(mapa_jogador, blocos_lista_jogador)
 
 mapa_jogador = alocacao_jogador
 
-#while not foi_derrotado(mapa_jogador) and not foi_derrotado(mapa_comp):
-
 print(mostrar_mapa_comp(mapa_comp,ALFABETO))
 
 print(mostrar_mapa_jog(mapa_jogador,ALFABETO))
+
+#while not foi_derrotado(mapa_jogador) and not foi_derrotado(mapa_comp):
+
+continuar = True
+while continuar:
+    seleciona_jogador = random.choice(['computador', 'jogador'])
+    if seleciona_jogador == 'computador':
+        linha_comp = random.randint(0, len(mapa_jogador)-1)
+        coluna_comp = random.randint(0, len(mapa_jogador)-1)
+        while mapa_jogador[linha_comp][coluna_comp] == X or mapa_jogador[linha_comp][coluna_comp] == A:
+            linha_comp = random.randint(0, len(mapa_jogador)-1)
+            coluna_comp = random.randint(0, len(mapa_jogador)-1)
+        if mapa_jogador[linha_comp][coluna_comp] == N:
+            mapa_jogador[linha_comp][coluna_comp] == X
+            if foi_derrotado(mapa_jogador) == True:
+                print('Que pena, mais sorte na próxima!')
+                jogarnovamente = input('você deseja jogar novamente?[s/n]')
+                if jogarnovamente == 's':
+                    continuar = True
+                else:
+                    continuar = False
+            else:
+                mostrar_mapa_comp(mapa_comp,ALFABETO)
+                mostrar_mapa_jog(mapa_jogador,ALFABETO)
+                seleciona_jogador = 'jogador'
+        
+        else:
+            mapa_jogador[linha_comp][coluna_comp] == A
+            mostrar_mapa_comp(mapa_comp,ALFABETO)
+            mostrar_mapa_jog(mapa_jogador,ALFABETO)
+            seleciona_jogador = 'jogador'
+    else:
+        linha_jog = int(input('digite a linha de ataque: '))-1
+        coluna_jog = int(input('digite a coluna de ataque: '))
+        while mapa_comp[linha_jog][coluna_jog] == X or mapa_comp == A:
+            linha_jog = int(input('digite a linha de ataque: '))-1
+            coluna_jog = int(input('digite a coluna de ataque: '))
+        if mapa_comp[linha_jog][coluna_jog] == N:
+            mapa_comp[linha_jog][coluna_jog] = X
+            if foi_derrotado(mapa_comp) == True:
+                print('Parabéns, você venceu a batalha! =)')
+                jogarnovamente = input('você deseja jogar novamente?[s/n]')
+                if jogarnovamente == 's':
+                    continuar = True
+                else:
+                    continuar = False
+
+            else:
+                mostrar_mapa_comp(mapa_comp,ALFABETO)
+                mostrar_mapa_jog(mapa_jogador,ALFABETO)
+                seleciona_jogador = 'computador'
+        else:
+            mapa_comp[linha_jog][coluna_jog] = A
+            mostrar_mapa_comp(mapa_comp,ALFABETO)
+            mostrar_mapa_jog(mapa_jogador,ALFABETO)
+            seleciona_jogador = 'computador'
 
