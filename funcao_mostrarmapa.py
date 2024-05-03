@@ -1,18 +1,6 @@
 from base_geral import *
 from funcoes import * 
-
-# paism, embarcacoesm = random.choice(list(PAISES.items())) #pais sorteado e lista das embarcações disponíveis para tal país
-
-#blocos_lista = lista_blocos(embarcacoesm,CONFIGURACAO) #funcao que devolve a lista de blocos disponível por barco disponível
-
-#mapa = cria_mapa(10) #precisa mudar a funcao que a variável mapa recebe
-
-#mapa_comp = aloca_navios(mapa, blocos_lista) #mapa da máquina 
-
-#mapa_jogador= cria_mapa(10)  #Pode ser mudado para mapa(10)
-
-
-#Função mostrar_mapa_comp (PARA O COMPUTADOR) e Função mostrar_mapa_jog (PARA O JOGADOR) 
+N= u"\u001b[32m▓\u001b[0m"
 
 #Mostra mapa atualizado 
 def mostrar_mapa_comp(mapa_comp,ALFABETO): 
@@ -23,8 +11,7 @@ def mostrar_mapa_comp(mapa_comp,ALFABETO):
     print("   ",end="") #Espaçamento inicial 
     for letra in ALFABETO: 
         print(letra+"  ",end="") #determino o espaçamento entre as letras
-        if letra == "J": 
-            break 
+
     print('\n',end="") 
 
     #Números laterais e linhas do mapa 
@@ -40,13 +27,9 @@ def mostrar_mapa_comp(mapa_comp,ALFABETO):
     print("   ",end="") #Espaçamento inicial 
     for letra in ALFABETO: 
         print(letra+"  ",end="") #determino o espaçamento entre as letras
-        if letra == "J": 
-            break 
+
     print('\n',end="") 
     return "" 
-
-
-# print(mostrar_mapa_comp(mapa_comp,ALFABETO)) #Nós não vamos printar na tela a posição dos navios do computador, será return. 
 
 ###### mostrar_mapa_jog ###### 
 
@@ -56,9 +39,7 @@ def mostrar_mapa_jog(mapa_jogador,ALFABETO):
     print("   ",end="")
 
     for l in ALFABETO: 
-        print(l+"  ",end="") 
-        if l == "J": 
-            break 
+        print(l+"  ",end="")
 
     print('\n',end="") 
 
@@ -73,7 +54,5 @@ def mostrar_mapa_jog(mapa_jogador,ALFABETO):
 
     for l in ALFABETO: 
         print(l+"  ",end="")
-        if l == "J": 
-            break 
-        
+
     print('\n',end="") 
