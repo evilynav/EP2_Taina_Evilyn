@@ -40,8 +40,8 @@ print(pc_ataca(mapa_jogador))
 
 #Ataque do Jogador 
 
-coluna_ataque_jog = int(input("Atacar na coluna:  ")) 
-linha_ataque_jog = int(input("Atacar na linha:  ")) 
+# coluna_ataque_jog = int(input("Atacar na coluna:  ")) 
+# linha_ataque_jog = int(input("Atacar na linha:  ")) 
 
 
 
@@ -53,4 +53,4 @@ def jog_ataca(mapa_comp,coluna_ataque_jog, linha_ataque_jog):
     else: 
         mapa_comp[coluna_ataque_jog][linha_ataque_jog] = 'A' 
 
-print(jog_ataca(mapa_comp,coluna_ataque_jog, linha_ataque_jog)) 
+# print(jog_ataca(mapa_comp,coluna_ataque_jog, linha_ataque_jog)) 

@@ -51,10 +51,15 @@ embarcarcoesjogador = PAISES[paisjogador]
 blocos_lista_jogador = lista_blocos(embarcarcoesjogador,CONFIGURACAO)
 
 print (embarcarcoesjogador, blocos_lista)
-# precisamos fazer uma funcao para aparecer o nome bonitinho junto com os numeros de blocos por navio
 
 alocacao_jogador = aloca_navios_jogador(mapa_jogador, blocos_lista_jogador)
+
+mapa_jogador = alocacao_jogador
+
+# while not foi_derrotado(mapa_jogador) and not foi_derrotado(mapa_comp):
+
 
 print(mostrar_mapa_comp(mapa_comp,ALFABETO))
 
 print(mostrar_mapa_jog(mapa_jogador,ALFABETO))
+
