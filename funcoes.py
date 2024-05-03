@@ -144,8 +144,6 @@ def escolher_frota(numero_frota):
 
 #Função lista_blocos 
 
-
-
 paism, embarcacoesm = random.choice(list(PAISES.items())) #pais sorteado e lista das embarcações disponíveis para tal país
 
 i=0
@@ -201,7 +199,9 @@ def aloca_navios_jogador(mapa, blocos):
         while True:
             j = int(input('Para alocar, informe uma coluna: '))
             i = int(input('Agora, escolha uma linha: '))
-            direcao = input('Para qual sentido a embarcação será posicionada? [h/v] ') 
+            direcao = input('Para qual sentido a embarcação será posicionada? [h/v] ')
+            i += 1
+            j += 1
 
             if posicao_suporta(mapa, blocos_navio, i, j, direcao):
 

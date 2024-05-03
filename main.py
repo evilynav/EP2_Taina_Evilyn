@@ -50,7 +50,10 @@ embarcarcoesjogador = PAISES[paisjogador]
 
 blocos_lista_jogador = lista_blocos(embarcarcoesjogador,CONFIGURACAO)
 
-print(blocos_lista_jogador)
+barcos_disponiveis = {}
+
+print (embarcarcoesjogador, blocos_lista)
+# precisamos fazer uma funcao para aparecer o nome bonitinho junto com os numeros de blocos por navio
 
 alocacao_jogador = aloca_navios_jogador(mapa_jogador, blocos_lista_jogador)
 

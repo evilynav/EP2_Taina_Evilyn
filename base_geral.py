@@ -48,7 +48,8 @@ PAISES =  {
 }
 
 # alfabeto para montar o nome das colunas
-ALFABETO = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+ALFABETO = 'ABCDEFGHIJ'
+#ALFABETO = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 # cores para o terminal
 CORES = {
