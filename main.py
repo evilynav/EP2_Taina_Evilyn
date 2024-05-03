@@ -2,8 +2,6 @@ import time
 from base_geral import *
 import random
 from funcao_mostrarmapa import * #Temporário, enquanto não ponho ele em funcoes 
-#from aloca_n_jog import *
-# from funcao_ataque import *  
 N= u"\u001b[32m▓\u001b[0m"
 
 
@@ -65,10 +63,3 @@ print(mostrar_mapa_comp(mapa_comp,ALFABETO))
 
 print(mostrar_mapa_jog(mapa_jogador,ALFABETO))
 
-print(mostrar_mapa_jog(mapa_jogador,ALFABETO)) 
-
-while True: 
-    integrantes= ["compuador", "jogador"] 
-    sorteia_ataque = random.choice(integrantes) 
-
-    print(sorteia_ataque)
