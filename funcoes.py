@@ -267,5 +267,6 @@ def aloca_navios_jogador(mapa, blocos):
                         mapa[i + z][j] = N
             
             print(mostrar_mapa_jog(mapa,ALFABETO))
+            break
 
     return mapa 
